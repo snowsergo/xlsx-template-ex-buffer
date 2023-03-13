@@ -1,7 +1,11 @@
+# Description
+ This code was created to extend functionality of another library by getting template as a buffer
+ Original Library: [https://github.com/optimistex/xlsx-template-ex](https://github.com/optimistex/xlsx-template-ex)
+
 # Excel template engine
 
 The Documentation available on languages:
-1. [English](https://github.com/optimistex/xlsx-template-ex#readme)
+1. [English](https://github.com/readme/xlsx-template-ex-buffer#readme)
 2. [Русский](README.ru.md)
 
 Supported files: **xlsx**
@@ -102,16 +106,11 @@ const data = {
 XlsxTemplate.xlsxBuildByTemplate(data, 'template-file.xlsx')
     .then((buffer) => fs.writeFileSync('./out.xlsx', buffer))
     .catch((error) => console.log('xlsxHelper error:', error));
+
+    XlsxTemplate.xlsxBuildByTemplateBuffer(data, buffer)
+    .then((buffer) => fs.writeFileSync('./out.xlsx', buffer))
+    .catch((error) => console.log('xlsxHelper error:', error));
 ```
-
-## Troubleshooting
-
-Please follow this guidelines when reporting bugs and feature requests:
-
-1. Use [GitHub Issues](https://github.com/optimistex/xlsx-template-ex/issues) board to report bugs and feature requests (not our email address)
-2. Please **always** write steps to reproduce the error. That way we can focus on fixing the bug, not scratching our heads trying to reproduce it.
-
-Thanks for understanding!
 
 ## Contribute
 

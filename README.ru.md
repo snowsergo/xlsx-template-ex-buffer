@@ -1,7 +1,12 @@
 # Excel шаблонизатор
 
+# Description
+ Этот пакет расширяет функциональность другой библиотеки, позволяя получать шаблон типа Buffer
+ Original Library: [https://github.com/optimistex/xlsx-template-ex](https://github.com/optimistex/xlsx-template-ex)
+
+
 Документация доступна на языках:
-1. [English](https://github.com/optimistex/xlsx-template-ex#readme)
+1. [English](https://github.com/snowsergo/xlsx-template-ex-buffer#readme)
 2. [Русский](README.ru.md)
 
 Совместимые файлы: **xlsx**
@@ -101,15 +106,6 @@ XlsxTemplate.xlsxBuildByTemplate(data, 'template-file.xlsx')
     .then((buffer) => fs.writeFileSync('./out.xlsx', buffer))
     .catch((error) => console.log('xlsxHelper error:', error));
 ```
-
-## Устранение неисправностей
-
-Пожалуйста, следуйте данному руководству при сообщении о багах и запросе новых фич:
-
-1. Используйте [GitHub Issues](https://github.com/optimistex/xlsx-template-ex/issues) раздел для отчетов об ошибках и запросах на новые фичи (не наш eMail)
-2. Пожалуйста **всегда** описывайте шаги воспроизведения ошибки. В таком случае мы сможем сфокусироваться на решении проблемы, не ломая голову в попытках воспроизвести проблему.
-
-Спасибо за понимание!
 
 ## Поддержка
 

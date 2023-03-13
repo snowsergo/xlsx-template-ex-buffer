@@ -22,3 +22,21 @@ export function xlsxBuildByTemplate(data: any, templateFileName: string, pipes: 
     return workbook.xlsx.writeBuffer();
   });
 }
+
+export function xlsxBuildByTemplateBuffer(data: any, template: Buffer, pipes: Pipes = {}): Promise<Buffer> {
+  if (typeof data !== "object") {
+    return Promise.reject("The data must be an object");
+  }
+
+  const workbook = new Workbook();
+  return workbook.xlsx.load(template).then(() => {
+    workbook.worksheets.forEach((worksheet: Worksheet) => {
+      const wsh = new WorkSheetHelper(worksheet);
+      const templateEngine = new TemplateEngine(wsh, data, pipes);
+      templateEngine.execute();
+    });
+
+    return workbook.xlsx.writeBuffer();
+  });
+}
+

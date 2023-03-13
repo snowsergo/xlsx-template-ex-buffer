@@ -1,20 +1,16 @@
 {
-  "name": "xlsx-template-ex",
+  "name": "xlsx-template-ex-buffer",
   "version": "0.2.9",
   "description": "The template engine for generate xlsx documents",
   "private": false,
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "author": "Konstantin Polyntsov <optimistex@gmail.com>",
+  "author": "Sergey Stupnikov <snowsergo@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:optimistex/xlsx-template-ex.git"
+    "url": "git+ssh://git@github.com:snowsergo/xlsx-template-ex-buffer.git"
   },
-  "bugs": {
-    "url": "https://github.com/optimistex/xlsx-template-ex/issues"
-  },
-  "homepage": "https://github.com/optimistex/xlsx-template-ex#readme",
   "scripts": {
     "start": "npm run build && node ./dist/example.js",
     "start-dev": "node $NODE_DEBUG_OPTION -r ts-node/register ./src/example.ts dev",
@@ -31,16 +27,5 @@
     "nodemon": "^1.19.1",
     "ts-node": "^7.0.1",
     "typescript": "^3.5.2"
-  },
-  "contributors": [
-    {
-      "name": "Konstantin Polyntsov",
-      "email": "optimistex@gmail.com",
-      "url": "https://github.com/optimistex"
-    },
-    {
-      "name": "Arlio Bizarre",
-      "url": "https://bitbucket.org/arlio/"
-    }
-  ]
+  }
 }
