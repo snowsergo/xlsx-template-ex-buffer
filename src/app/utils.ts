@@ -3,7 +3,11 @@ import { TemplateEngine, Pipes } from "./template-engine";
 import { WorkSheetHelper } from "./worksheet-helper";
 import { Workbook, Worksheet, Buffer } from "exceljs";
 
-export function xlsxBuildByTemplate(data: any, templateFileName: string, pipes: Pipes = {}): Promise<Buffer> {
+export function xlsxBuildByTemplate(
+  data: any,
+  templateFileName: string,
+  pipes: Pipes = {}
+): Promise<Buffer> {
   if (!fs.existsSync(templateFileName)) {
     return Promise.reject(`File ${templateFileName} does not exist`);
   }
@@ -23,11 +27,16 @@ export function xlsxBuildByTemplate(data: any, templateFileName: string, pipes: 
   });
 }
 
-export function xlsxBuildByTemplateBuffer(data: any, template: Buffer, pipes: Pipes = {}): Promise<Buffer> {
+export function xlsxBuildByTemplateBuffer(
+  data: any,
+  template: Buffer,
+  pipes: Pipes = {}
+): Promise<Buffer> {
+  console.log("Start libs");
   if (typeof data !== "object") {
     return Promise.reject("The data must be an object");
   }
-
+  console.log("<<<new img");
   const workbook = new Workbook();
   return workbook.xlsx.load(template).then(() => {
     workbook.worksheets.forEach((worksheet: Worksheet) => {
@@ -35,8 +44,7 @@ export function xlsxBuildByTemplateBuffer(data: any, template: Buffer, pipes: Pi
       const templateEngine = new TemplateEngine(wsh, data, pipes);
       templateEngine.execute();
     });
-
+    console.log("<<<before return");
     return workbook.xlsx.writeBuffer();
   });
 }
-

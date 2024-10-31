@@ -12,8 +12,8 @@
     "url": "git+ssh://git@github.com:snowsergo/xlsx-template-ex-buffer.git"
   },
   "scripts": {
-    "start": "npm run build && node ./dist/example.js",
-    "start-dev": "node $NODE_DEBUG_OPTION -r ts-node/register ./src/example.ts dev",
+    "start": "npm run build && node dist/example.js",
+    "start-dev": "node $NODE_DEBUG_OPTION -r ts-node/register src/example.ts dev",
     "build": "rm -rf dist && tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
