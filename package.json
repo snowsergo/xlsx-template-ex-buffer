@@ -1,6 +1,6 @@
 {
   "name": "xlsx-template-ex-buffer",
-  "version": "0.2.10",
+  "version": "0.2.11",
   "description": "The template engine for generate xlsx documents",
   "private": false,
   "license": "MIT",
