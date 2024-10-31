@@ -21,8 +21,11 @@ export class WorkSheetHelper {
     return this.worksheet.name;
   }
 
-  public addImage(fileName: string, cell: Cell): void {
-    const imgId = this.workbook.addImage({filename: fileName, extension: 'jpeg'});
+  public addImage(fileData: string | Buffer, cell: Cell): void {
+    const imgId =
+      typeof fileData === "string"
+        ? this.workbook.addImage({ filename: fileData, extension: "jpeg" })
+        : this.workbook.addImage({ buffer: fileData, extension: "jpeg" });
 
     const cellRange = this.getMergeRange(cell);
     if (cellRange) {
