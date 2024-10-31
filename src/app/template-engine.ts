@@ -212,10 +212,13 @@ export class TemplateEngine {
     return date ? moment(new Date(date)).format("DD.MM.YYYY HH:mm:ss") : "";
   }
 
-  private valuePipeImage(cell: Cell, fileName: string): string {
-    if (fs.existsSync(fileName)) {
-      this.wsh.addImage(fileName, cell);
-      return fileName;
+  private valuePipeImage(cell: Cell, fileData: string | Buffer): string {
+    if (typeof fileData === "string" && fs.existsSync(fileData)) {
+      this.wsh.addImage(fileData, cell);
+      return fileData;
+    } else if (fileData instanceof Buffer) {
+      this.wsh.addImage(fileData, cell);
+      return "";
     }
     return ``;
   }
